@@ -1,0 +1,168 @@
+/*
+	component: side navigation
+	author: xor projects
+	github: https://github.com/xorprojects/material-web-framework
+*/
+
+#sidenav {
+	height: 100%;
+	width: 400px;
+	padding: 0;
+	margin: 0;
+	background: #fff;
+	overflow-y: auto;
+	position: fixed;
+	top: 0;
+	left: -424px;
+	z-index: 9998;
+	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+	transition: left .3s ease;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.open#sidenav {
+	left: 0;
+}
+
+
+/* header */
+#sidenav-header {
+	width: 100%;
+	height: 225px;
+	box-sizing: border-box;
+	font-size: 16px;
+	padding: 0 24px;
+	background: var(--sidenav-header-image-protection), var(--sidenav-header-image) 50% 50%/cover;
+	transition: background .3s ease;
+	margin-bottom: 8px;
+	position: relative;
+}
+#sidenav-accountimg {
+	border-radius: 50%;
+	height: 64px;
+	position: relative;
+	top: 24px;
+	left: 0;
+}
+#sidenav-titles {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	line-height: 24px;
+	padding: 24px;
+	box-sizing: border-box;
+	width: 100%;
+}
+#sidenav-title {
+	color: rgba(255, 255, 255, 1);
+	display: block;
+}
+#sidenav-subtitle {
+	color: rgba(255, 255, 255, .7);
+	display: block;
+}
+#sidenav-header i.material-icons#sidenav-accounticon {
+	position: absolute;
+	right: 24px;
+	bottom: 36px;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+/* nav items */
+.sidenav-item {
+	width: 100%;
+	line-height: 48px;
+	overflow: auto;
+}
+.sidenav-item > a,
+.sidenav-item > span {
+	background: rgba(33, 33, 33, 0);
+	float: left;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background .3s ease, color .3s ease;
+}
+.sidenav-item > a > span,
+.sidenav-item > span > span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: calc(100% - 96px);
+	display: inline-block;
+	float: left;
+}
+.sidenav-item:hover > a,
+.sidenav-item.sidenav-active > a,
+.sidenav-item:hover > span,
+.sidenav-item.sidenav-active > span,
+.sidenav-item > i.material-icons:hover,
+.sidenav-item > i.material-icons.sidenav-active {
+	background: rgba(33, 33, 33, .1);
+}
+.sidenav-item > a,
+.sidenav-item > span {
+	width: 100%;
+	display: block;
+	clear: both;
+	box-sizing: border-box;
+	padding: 0 24px;
+	font-size: 16px;
+	color: rgba(0, 0, 0, .87) !important;
+}
+.sidenav-item > a > i.material-icons,
+.sidenav-item > span > i.material-icons {
+	line-height: 48px;
+	margin-right: 24px;
+	color: rgba(0, 0, 0, .54);
+	transition: color .3s ease;
+	float: left;
+}
+.sidenav-item.sidenav-active,
+.sidenav-item > i.material-icons.sidenav-active,
+.sidenav-item.sidenav-active > a > i.material-icons {
+	color: rgba(0, 0, 0, .87);
+}
+.sidenav-item > i.material-icons {
+	position: absolute;
+	right: 12px;
+	padding: 12px;
+	border-radius: 50%;
+	background: rgba(33, 33, 33, 0);
+	cursor: pointer;
+	transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+.sidenav-item > i.material-icons.sidenav-active {
+	transform: rotate(180deg);
+}
+
+/* sub items */
+.sidenav-subitems {
+	display: none;
+}
+
+.sidenav-subitems.sidenav-active {
+	display: block;
+}
+
+/* divider */
+.sidenav-divider {
+	margin: 8px 0;
+	background: rgba(0,0,0,.12);
+	height: 1px;
+}
+
+/* dimmer */
+#sidenav-dimmer {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 9996;
+	background: rgba(33, 33, 33, 0);
+	transition: background .3s ease;
+}
+
+.on#sidenav-dimmer {
+	background: rgba(33, 33, 33, .6);
+}

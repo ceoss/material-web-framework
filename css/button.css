@@ -1,0 +1,105 @@
+/*
+	Component: Button
+	Author: XOR Projects
+	GitHub: https://github.com/xorprojects/Material-Web-Framework
+*/
+
+.button {
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.button > span {
+	cursor: pointer;
+	margin: 8px;
+	height: 32px;
+	font-size: 13px;
+	line-height: 32px;
+	box-sizing: border-box;
+	border-radius: 2px;
+	min-width: 88px;
+	padding: 0 16px;
+	display: inline-block;
+	letter-spacing: .5px;
+	box-shadow: none;
+	background: #037ed3;
+	transition: box-shadow .2s ease;
+}
+.button > span:hover {
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.button > span::after {
+	content: '';
+	transition: background .2s ease;
+	background: rgba(153,153,153,0);
+	height: 100%;
+	display: block;
+	border-radius: inherit;
+	padding: inherit;
+	position: relative;
+	bottom: 32px;
+	margin: 0 -16px;
+}
+.button.flat {
+	color: #037ed3;
+}
+.button.flat > span {
+	transition: box-shadow .2s ease, background .2s ease;
+	box-shadow: none;
+	background: rgba(153,153,153,0);
+}
+.button.flat > span:hover,
+.button > span:hover::after {
+	background: rgba(153,153,153,.12);
+}
+.button.flat > span:active,
+.button > span:active::after {
+	background: rgba(153,153,153,.4);
+}
+.button.flat.dark > span,
+.button.dark > span::after {
+	background: rgba(204,204,204,.0);
+}
+.button.flat.dark > span:hover,
+.button.dark > span:hover::after {
+	background: rgba(204,204,204,.12);
+}
+.button.flat.dark > span:active,
+.button.dark > span:active::after {
+	background: rgba(204,204,204,.25);
+}
+.button.center {
+	margin: auto;
+}
+
+@media (max-width: 599px) and (orientation: portrait), (max-width: 959px) and (orientation: landscape) {
+	.button > span {
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+		height: 36px;
+		font-size: 14px;
+		line-height: 36px;
+	}
+	.button > span:hover {
+		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+	}
+	.button > span::after {
+		bottom: 36px;
+	}
+}
+@media (pointer:coarse) {
+	.button > span {
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+		height: 36px;
+		font-size: 14px;
+		line-height: 36px;
+	}
+	.button > span:hover {
+		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+	}
+	.button > span::after {
+		bottom: 36px;
+	}
+}

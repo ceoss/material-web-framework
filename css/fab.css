@@ -1,0 +1,100 @@
+/*
+	Component: Floating Action Button
+	Author: XOR Projects
+	GitHub: https://github.com/xorprojects/Material-Web-Framework
+*/
+
+/* Variables */
+:root {
+	/* Elavation */
+	--fab-elevation-1: var(--elevation-1);
+	--fab-elevation-2: var(--elevation-2);
+	--fab-elevation-3: var(--elevation-3);
+	--fab-elevation-4: var(--elevation-4);
+	--fab-elevation-5: var(--elevation-5);
+}
+
+.fab {
+	background: var(--secondary);
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	border-radius: 50%;
+	width: 56px;
+	height: 56px;
+	box-shadow: var(--fab-elevation-1);
+	text-align: center;
+	color: #fff !important;
+	z-index: 9994;
+	transition: all 0.2s ease;
+}
+.fab:hover {
+	background: var(--secondary-light);
+	box-shadow: var(--fab-elevation-3);
+}
+.fab:active {
+	background: var(--secondary-light);
+	box-shadow: var(--fab-elevation-4);
+}
+
+
+.fab::after {
+	border-top: var(--tint);
+	border-bottom: var(--shade);
+	height: calc(100% - 2px);
+	width: 100%;
+	border-radius: inherit;
+	background-clip: border-box;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	pointer-events: none;
+	content: "";
+}
+.fab.inbetween-tabs {
+	animation: inbetween-tabs .2s;
+}
+.fab .material-icons {
+	line-height: 56px !important;
+}
+.fab.inbetween-tabs .material-icons {
+	display: none;
+}
+@keyframes inbetween-tabs {
+	50% {
+		width: 0;
+		height: 0;
+		bottom: 52px;
+		right: 52px;
+	}
+	100% {
+		width: 56px;
+		height: 56px;
+		bottom: 24px;
+		right: 24px;
+	}
+}
+
+
+@media (max-width: 599px) and (orientation: portrait), (max-width: 959px) and (orientation: landscape) {
+	.fab {
+		bottom: 16px;
+		right: 16px;
+	}
+	@keyframes inbetween-tabs {
+		50% {
+			width: 0;
+			height: 0;
+			bottom: 44px;
+			right: 44px;
+		}
+		100% {
+			width: 56px;
+			height: 56px;
+			bottom: 16px;
+			right: 16px;
+		}
+	}
+}

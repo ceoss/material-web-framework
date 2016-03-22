@@ -1,0 +1,39 @@
+/*
+	Component: Card
+	Author: XOR Projects
+	GitHub: https://github.com/xorprojects/Material-Web-Framework
+*/
+
+.card {
+	max-width: 1200px;
+	margin: auto;
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: var(--elevation-1);
+	padding: 24px;
+	box-sizing: border-box;
+	position: relative;
+	overflow: auto;
+}
+.card .actions {
+	position: absolute;
+	right: 24px;
+	display: inline-block;
+}
+.card .actions .material-icons {
+	padding: 12px;
+	color: rgba(0,0,0,.54);
+	cursor: pointer;
+	border-radius: 50%;
+	background: rgba(33, 33, 33, 0);
+	transition: background 0.3s ease;
+}
+.card .actions .material-icons:hover {
+	background: rgba(33, 33, 33, .1);
+}
+
+@media (max-width: 599px) and (orientation: portrait), (max-width: 959px) and (orientation: landscape) {
+	.card {
+		padding: 16px;
+	}
+}
